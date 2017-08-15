@@ -1,6 +1,7 @@
 program ropeCoil
 	use arcLength
 	use zEquation
+	use zEquationSOR
 	use xyEquations
 	implicit none
 	
@@ -34,18 +35,24 @@ program ropeCoil
 	print *, s
 	
 	! Use analytical solution for z
-	call solveZ(z, s, beta, g)
+	!call solveZ(z, s, beta, g)
 	
-	print *, "z:"
-	print *, z
+	!print *, "z:"
+	!print *, z
+	
+	! Use numerical solution for z
+	call solveZSOR(z, s, beta)
+	
+	!print *, "z:"
+	!print *, z
 	
 	! Solve x and y by successive over-relaxation
-	call solveXY(x, y, s, beta, omega)
+	!call solveXY(x, y, s, beta, omega)
 	
-	print *, "x:"
-	print *, x
-	print *, "y:"
-	print *, y
+	!print *, "x:"
+	!print *, x
+	!print *, "y:"
+	!print *, y
 	
 	! Deallocate coordinate arrays
 	deallocate(s)
