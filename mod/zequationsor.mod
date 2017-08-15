@@ -1,10 +1,8 @@
 GFORTRAN module version '10' created from .\src\zEquationSOR.f95
-MD5:6f9cd933ef054e2e50749340b698f8ee -- If you edit this, you'll get what you deserve.
+MD5:423a14b45fe3fde887cab076678a9712 -- If you edit this, you'll get what you deserve.
 
-(() () () () () () () () () () () () () () () () () () () () () () ()
-() () () ())
-
-()
+(() () () () () () () () () () () () () () () () () () () () () () () ()
+() () ())
 
 ()
 
@@ -14,44 +12,22 @@ MD5:6f9cd933ef054e2e50749340b698f8ee -- If you edit this, you'll get what you de
 
 ()
 
-(2 'residualz' 'zequationsor' '' 1 ((PROCEDURE UNKNOWN-INTENT
-MODULE-PROC DECL UNKNOWN 0 0 FUNCTION IMPLICIT_PURE ALWAYS_EXPLICIT) (
-REAL 8 0 0 0 REAL ()) 3 0 (4 5 6) () 2 () () () 0 0)
-7 'solvezsor' 'zequationsor' '' 1 ((PROCEDURE UNKNOWN-INTENT MODULE-PROC
-DECL UNKNOWN 0 0 SUBROUTINE ALWAYS_EXPLICIT) (UNKNOWN 0 0 0 0 UNKNOWN ())
-8 0 (9 10 11) () 0 () () () 0 0)
-12 'soriterz' 'zequationsor' '' 1 ((PROCEDURE UNKNOWN-INTENT MODULE-PROC
-DECL UNKNOWN 0 0 SUBROUTINE IMPLICIT_PURE ALWAYS_EXPLICIT) (UNKNOWN 0 0
-0 0 UNKNOWN ()) 13 0 (14 15 16 17) () 0 () () () 0 0)
-18 'zequationsor' 'zequationsor' '' 1 ((MODULE UNKNOWN-INTENT
+()
+
+(2 'solvezsor' 'zequationsor' '' 1 ((PROCEDURE UNKNOWN-INTENT
+MODULE-PROC DECL UNKNOWN 0 0 SUBROUTINE IMPLICIT_PURE ALWAYS_EXPLICIT) (
+UNKNOWN 0 0 0 0 UNKNOWN ()) 3 0 (4 5 6) () 0 () () () 0 0)
+7 'zequationsor' 'zequationsor' '' 1 ((MODULE UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN UNKNOWN 0 0) (UNKNOWN 0 0 0 0 UNKNOWN ()) 0 0 () ()
 0 () () () 0 0)
-4 'z' '' '' 3 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DIMENSION
-DUMMY) (REAL 8 0 0 0 REAL ()) 0 0 () (1 0 ASSUMED_SHAPE (CONSTANT (
-INTEGER 4 0 0 0 INTEGER ()) 0 '1') ()) 0 () () () 0 0)
+4 'z' '' '' 3 ((VARIABLE INOUT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0
+DIMENSION DUMMY) (REAL 8 0 0 0 REAL ()) 0 0 () (1 0 ASSUMED_SHAPE (
+CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '1') ()) 0 () () () 0 0)
 5 's' '' '' 3 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DIMENSION
 DUMMY) (REAL 8 0 0 0 REAL ()) 0 0 () (1 0 ASSUMED_SHAPE (CONSTANT (
 INTEGER 4 0 0 0 INTEGER ()) 0 '1') ()) 0 () () () 0 0)
 6 'beta' '' '' 3 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DUMMY) (
 REAL 8 0 0 0 REAL ()) 0 0 () () 0 () () () 0 0)
-9 'z' '' '' 8 ((VARIABLE OUT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DIMENSION
-DUMMY) (REAL 8 0 0 0 REAL ()) 0 0 () (1 0 ASSUMED_SHAPE (CONSTANT (
-INTEGER 4 0 0 0 INTEGER ()) 0 '1') ()) 0 () () () 0 0)
-10 's' '' '' 8 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DIMENSION
-DUMMY) (REAL 8 0 0 0 REAL ()) 0 0 () (1 0 ASSUMED_SHAPE (CONSTANT (
-INTEGER 4 0 0 0 INTEGER ()) 0 '1') ()) 0 () () () 0 0)
-11 'beta' '' '' 8 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN UNKNOWN
-0 0 DUMMY) (REAL 8 0 0 0 REAL ()) 0 0 () () 0 () () () 0 0)
-14 'z' '' '' 13 ((VARIABLE INOUT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0
-DIMENSION DUMMY) (REAL 8 0 0 0 REAL ()) 0 0 () (1 0 ASSUMED_SHAPE (
-CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '1') ()) 0 () () () 0 0)
-15 's' '' '' 13 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DIMENSION
-DUMMY) (REAL 8 0 0 0 REAL ()) 0 0 () (1 0 ASSUMED_SHAPE (CONSTANT (
-INTEGER 4 0 0 0 INTEGER ()) 0 '1') ()) 0 () () () 0 0)
-16 'beta' '' '' 13 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DUMMY)
-(REAL 8 0 0 0 REAL ()) 0 0 () () 0 () () () 0 0)
-17 'w' '' '' 13 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DUMMY) (
-REAL 8 0 0 0 REAL ()) 0 0 () () 0 () () () 0 0)
 )
 
-('residualz' 0 2 'solvezsor' 0 7 'soriterz' 0 12 'zequationsor' 0 18)
+('solvezsor' 0 2 'zequationsor' 0 7)

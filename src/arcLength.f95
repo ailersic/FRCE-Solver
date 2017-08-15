@@ -5,7 +5,7 @@ contains
 		real(SELECTED_REAL_KIND(15))				:: sf, beta, g, lerr, a = 1, tol = 1e-12
 
 		! While error is above tolerance, do Newton's method
-		do while (abs(sfEqn(sf, beta, g)) > tol)
+		do while (abs(sfEqn(sf, beta, g)).gt.tol)
 			sf = sf - sfEqn(sf, beta, g)/dsfEqn(sf, beta, g)
 		end do
 	end

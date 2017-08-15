@@ -35,16 +35,16 @@ program ropeCoil
 	print *, s
 	
 	! Use analytical solution for z
-	!call solveZ(z, s, beta, g)
+	call solveZ(z, s, beta, g)
 	
-	!print *, "z:"
-	!print *, z
+	print *, "z:"
+	print *, z
 	
 	! Use numerical solution for z
 	call solveZSOR(z, s, beta)
 	
-	!print *, "z:"
-	!print *, z
+	print *, "z:"
+	print *, z
 	
 	! Solve x and y by successive over-relaxation
 	!call solveXY(x, y, s, beta, omega)
