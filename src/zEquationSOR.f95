@@ -3,7 +3,7 @@ contains
 	subroutine solveZSOR(z, s, beta)
 		implicit none
 		integer										:: n, i, j, iterMax = 1e2
-		real(SELECTED_REAL_KIND(15))				:: zSum1, zSum2, h, res, tol = 1e-8, w = 1e-2
+		real(SELECTED_REAL_KIND(15))				:: zSum1, zSum2, h, res, tol = 1e-8, w = 0.1
 		real(SELECTED_REAL_KIND(15)), intent(in)	:: beta, s(:)
 		real(SELECTED_REAL_KIND(15)), intent(inout)	:: z(:)
 		
