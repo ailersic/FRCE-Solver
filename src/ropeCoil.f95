@@ -33,18 +33,20 @@ program ropeCoil
 	! Populate arc length array with linearly spaced nodes
 	do i = 1,n
 		s(i) = (sf*(i - 1))/(n - 1)
-		z(i) = (i-1.0)/(n-1.0)
+		!z(i) = (i-1.0)/(n-1.0)
 	end do
 	
 	! Use analytical solution for z
-	!call solveZ(z, s, beta, g)
+	call solveZ(z, s, beta, g)
+	
+	print *, residualZ(z, s, beta)
 	
 	!do i = 1,n
 	!	z(i) = z(i) + 4*1e-2*(i - 1.0)*(n - i)/((n - 1.0)*(n - 1.0))
 	!end do
 	
 	!print *, "z:"
-	print *, z
+	!print *, z
 	
 	! Use numerical solution for z
 	call solveZSOR(z, s, beta)
