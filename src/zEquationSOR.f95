@@ -2,8 +2,8 @@ module zEquationSOR
 contains
 	subroutine solveZSOR(z, s, beta)
 		implicit none
-		integer										:: n, i, j, iterMax = 10
-		real(SELECTED_REAL_KIND(15))				:: zSum1, zSum2, h, res, tol = 1e-8, w = 1
+		integer										:: n, i, j, iterMax = 1e2
+		real(SELECTED_REAL_KIND(15))				:: zSum1, zSum2, h, res, tol = 1e-8, w = 1e-2
 		real(SELECTED_REAL_KIND(15)), intent(in)	:: beta, s(:)
 		real(SELECTED_REAL_KIND(15)), intent(inout)	:: z(:)
 		
@@ -26,7 +26,8 @@ contains
 				z(i) = (1-w)*z(i) - w*h*h/2*(beta/(2*h*h*h)*z(i-2) - (1/(h*h) + beta/(h*h*h))*z(i-1) &
 					- (1/(h*h) - beta/(h*h*h))*z(i+1) - beta/(2*h*h*h)*z(i+2))
 			end do
-			z(n-1) = (1-w)*z(n-1) + 2*w*h*h*h/(beta - 4*h)*(1/(h*h) - beta/(h*h*h) - beta/(2*h*h*h)*z(n-3) - (1/(h*h) + beta/(h*h*h))*z(n-2))
+			z(n-1) = (1-w)*z(n-1) + 2*w*h*h*h/(beta - 4*h)*(beta/(2*h*h*h)*z(n-3) &
+				- (1/(h*h) + beta/(h*h*h))*z(n-2) - (1/(h*h) - beta/(h*h*h))*z(n))
 		
 			! Sum values after iteration
 			zSum2 = 0
@@ -37,6 +38,9 @@ contains
 			! Calculate residual and increment iteration counter
 			res = abs(zSum2 - zSum1)/abs(zSum2)
 			j = j + 1
+			
+			!print *, "ITERATION"
+			print *, z
 		end do
 	end
 end module zEquationSOR

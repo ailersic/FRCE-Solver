@@ -11,11 +11,15 @@ program ropeCoil
 	
 	! Request user input
 	print *, "Number of nodes:"
-	read *, n
+	!read *, n
 	print *, "Beta value:"
-	read *, beta
+	!read *, beta
 	print *, "Unitless gravity constant:"
-	read *, g
+	!read *, g
+	
+	n = 10
+	beta = 5
+	g = 0
 	
 	! Allocate coordinate arrays with n elements
 	allocate(s(n))
@@ -31,20 +35,21 @@ program ropeCoil
 		s(i) = (sf*(i - 1))/(n - 1)
 	end do
 	
-	print *, "s:"
-	print *, s
-	
 	! Use analytical solution for z
 	call solveZ(z, s, beta, g)
 	
-	print *, "z:"
-	print *, z
+	do i = 1,n
+		z(i) = z(i) + 4*1e-1*(i - 1.0)*(n - i)/((n - 1.0)*(n - 1.0))
+	end do
+	
+	!print *, "z:"
+	!print *, z
 	
 	! Use numerical solution for z
 	call solveZSOR(z, s, beta)
 	
-	print *, "z:"
-	print *, z
+	!print *, "z:"
+	!print *, z(n/2+1)
 	
 	! Solve x and y by successive over-relaxation
 	!call solveXY(x, y, s, beta, omega)
