@@ -99,6 +99,7 @@ contains
 		implicit none
 		integer													:: i, n
 		real(SELECTED_REAL_KIND(15))							:: h, omega = 0
+		real(SELECTED_REAL_KIND(15))							:: az = 0, azs = 1, bz = 1, bzs = 0
 		real(SELECTED_REAL_KIND(15)), intent(in)				:: s(:), beta
 		real(SELECTED_REAL_KIND(15)), dimension(:), allocatable	:: bl(:), solveZPent(:)
 		
@@ -108,23 +109,25 @@ contains
 		allocate(bl(n))
 		allocate(solveZPent(n))
 		
-		bl(1) = 0
-		bl(2) = -beta/(h*h)
+		bl(1) = az
+		bl(2) = -beta/(h*h)*azs
 		do i=3,n-1
 			bl(i) = 0
 		end do
-		bl(n) = 1
+		bl(n-1) = bzs
+		bl(n) = bz
 		
 		call solvePent(solveZPent, s, bl, omega, beta)
 		
 		deallocate(bl)
 	end
 	
-	function solveXPent(s, y, beta, omega, rf)
+	function solveXPent(s, y, beta, omega, bx)
 		implicit none
 		integer													:: i, n
 		real(SELECTED_REAL_KIND(15))							:: h
-		real(SELECTED_REAL_KIND(15)), intent(in)				:: s(:), y(:), beta, omega, rf
+		real(SELECTED_REAL_KIND(15)), intent(in)				:: s(:), y(:), beta, omega, bx
+		real(SELECTED_REAL_KIND(15))							:: ax = 0, axs = 0, bxs = 0
 		real(SELECTED_REAL_KIND(15)), dimension(:), allocatable	:: bl(:), solveXPent(:)
 		
 		n = size(s)
@@ -133,11 +136,13 @@ contains
 		allocate(bl(n))
 		allocate(solveXPent(n))
 		
-		bl(1) = 0
+		bl(1) = ax
 		do i=2,n-1
 			bl(i) = omega*y(i+1)/h - omega*y(i-1)/h
 		end do
-		bl(n) = rf
+		bl(2) = bl(2) - beta/(h*h)*axs
+		bl(n-1) = bl(n-1) - beta/(h*h)*bxs
+		bl(n) = bx
 		
 		call solvePent(solveXPent, s, bl, omega, beta)
 		
@@ -149,6 +154,7 @@ contains
 		integer													:: i, n
 		real(SELECTED_REAL_KIND(15))							:: h
 		real(SELECTED_REAL_KIND(15)), intent(in)				:: s(:), x(:), beta, omega, rf
+		real(SELECTED_REAL_KIND(15))							:: ay = 0, ays = 0, by = 0, bys = 1
 		real(SELECTED_REAL_KIND(15)), dimension(:), allocatable	:: bl(:), solveYPent(:)
 		
 		n = size(s)
@@ -157,12 +163,13 @@ contains
 		allocate(bl(n))
 		allocate(solveYPent(n))
 		
-		bl(1) = 0
+		bl(1) = ay
 		do i=2,n-1
 			bl(i) = omega*x(i-1)/h - omega*x(i+1)/h
 		end do
-		bl(n-1) = bl(n-1) - beta/(h*h)
-		bl(n) = 0
+		bl(2) = bl(2) - beta/(h*h)*ays
+		bl(n-1) = bl(n-1) - beta/(h*h)*bys
+		bl(n) = by
 		
 		call solvePent(solveYPent, s, bl, omega, beta)
 		
