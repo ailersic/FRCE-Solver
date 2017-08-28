@@ -2,10 +2,10 @@ module zEquation
 contains
 	subroutine solveZ(z, s, beta, g)
 		implicit none
-		integer										:: n, i
-		real(SELECTED_REAL_KIND(15))				:: beta, g, c1, c2, c3, sf
-		real(SELECTED_REAL_KIND(15)), intent(in)	:: s(:)
-		real(SELECTED_REAL_KIND(15)), intent(out)	:: z(:)
+		integer				:: n, i
+		real*8				:: beta, g, c1, c2, c3, sf
+		real*8, intent(in)	:: s(:)
+		real*8, intent(out)	:: z(:)
 		
 		! Initialize number of nodes
 		n = size(s)

@@ -5,9 +5,9 @@ program ropeCoil
 	use xyEquations
 	implicit none
 	
-	integer													:: i, n
-	real(SELECTED_REAL_KIND(15))							:: beta, g, sf = 2, rf = 0.3, w = 0.5, omega = 10
-	real(SELECTED_REAL_KIND(15)), allocatable, dimension(:)	:: s, x, y, z, xt, yt
+	integer								:: i, n
+	real*8								:: beta, g, sf = 2, w = 0.01, omega = 6
+	real*8, allocatable, dimension(:)	:: s, x, y, z, xt, yt
 	
 	! Request user input
 	!print *, "Number of nodes:"
@@ -17,7 +17,7 @@ program ropeCoil
 	!print *, "Unitless gravity constant:"
 	!read *, g
 	
-	n = 1000
+	n = 10
 	beta = 5
 	g = 0
 	
@@ -32,8 +32,7 @@ program ropeCoil
 	! Populate arc length array and initial x vector with linearly spaced nodes
 	do i = 1,n
 		s(i) = (sf*(i - 1))/(n - 1)
-		x(i) = (rf*(i - 1))/(n - 1)
-		y(i) = 0
+		x(i) = (i - 1)/(abs(omega)*(n - 1))
 	end do
 	
 	! Use analytical solution for z
@@ -46,12 +45,12 @@ program ropeCoil
 	!call solveXY(x, y, s, beta, omega)
 	
 	! Use numerical solution for x and y
-	do i=1,50
-		yt = solveYPent(s, x, beta, omega, rf)
+	do i=1,1
+		yt = solveYPent(s, x, beta, omega)
 		y = (1-w)*y + w*yt
 		deallocate(yt)
 		
-		xt = solveXPent(s, y, beta, omega, rf)
+		xt = solveXPent(s, y, beta, omega)
 		x = (1-w)*x + w*xt
 		deallocate(xt)
 	end do

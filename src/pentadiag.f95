@@ -2,11 +2,11 @@ module pentadiag
 contains
 	subroutine solvePent(u, s, bv, omega, betaV)
 		implicit none
-		integer													:: i, n
-		real(SELECTED_REAL_KIND(15))							:: h, am2, am1, a0, ap1, ap2
-		real(SELECTED_REAL_KIND(15)), intent(in)				:: s(:), bv(:), omega, betaV
-		real(SELECTED_REAL_KIND(15)), intent(out)				:: u(:)
-		real(SELECTED_REAL_KIND(15)), allocatable, dimension(:)	:: alpha, beta, gamma, mu, a, b, c, d, e, v
+		integer								:: i, n
+		real*8								:: h, am2, am1, a0, ap1, ap2
+		real*8, intent(in)					:: s(:), bv(:), omega, betaV
+		real*8, intent(out)					:: u(:)
+		real*8, allocatable, dimension(:)	:: alpha, beta, gamma, mu, a, b, c, d, e, v
 		
 		n = size(s)
 		h = s(2) - s(1)
@@ -97,11 +97,11 @@ contains
 	
 	function solveZPent(s, beta)
 		implicit none
-		integer													:: i, n
-		real(SELECTED_REAL_KIND(15))							:: h, omega = 0
-		real(SELECTED_REAL_KIND(15))							:: az = 0, azs = 1, bz = 1, bzs = 0
-		real(SELECTED_REAL_KIND(15)), intent(in)				:: s(:), beta
-		real(SELECTED_REAL_KIND(15)), dimension(:), allocatable	:: bl(:), solveZPent(:)
+		integer								:: i, n
+		real*8								:: h, omega = 0
+		real*8								:: az = 0, azs = 1, bz = 1, bzs = 0
+		real*8, intent(in)					:: s(:), beta
+		real*8, dimension(:), allocatable	:: bl(:), solveZPent(:)
 		
 		n = size(s)
 		h = s(2) - s(1)
@@ -122,16 +122,18 @@ contains
 		deallocate(bl)
 	end
 	
-	function solveXPent(s, y, beta, omega, bx)
+	function solveXPent(s, y, beta, omega)
 		implicit none
-		integer													:: i, n
-		real(SELECTED_REAL_KIND(15))							:: h
-		real(SELECTED_REAL_KIND(15)), intent(in)				:: s(:), y(:), beta, omega, bx
-		real(SELECTED_REAL_KIND(15))							:: ax = 0, axs = 0, bxs = 0
-		real(SELECTED_REAL_KIND(15)), dimension(:), allocatable	:: bl(:), solveXPent(:)
+		integer								:: i, n
+		real*8								:: h
+		real*8, intent(in)					:: s(:), y(:), beta, omega
+		real*8								:: ax = 0, axs = 0, bx, bxs = 0
+		real*8, dimension(:), allocatable	:: bl(:), solveXPent(:)
 		
 		n = size(s)
 		h = s(2) - s(1)
+		
+		bx = abs(1/omega)
 		
 		allocate(bl(n))
 		allocate(solveXPent(n))
@@ -149,13 +151,13 @@ contains
 		deallocate(bl)
 	end
 	
-	function solveYPent(s, x, beta, omega, rf)
+	function solveYPent(s, x, beta, omega)
 		implicit none
-		integer													:: i, n
-		real(SELECTED_REAL_KIND(15))							:: h
-		real(SELECTED_REAL_KIND(15)), intent(in)				:: s(:), x(:), beta, omega, rf
-		real(SELECTED_REAL_KIND(15))							:: ay = 0, ays = 0, by = 0, bys = 1
-		real(SELECTED_REAL_KIND(15)), dimension(:), allocatable	:: bl(:), solveYPent(:)
+		integer								:: i, n
+		real*8								:: h
+		real*8, intent(in)					:: s(:), x(:), beta, omega
+		real*8								:: ay = 0, ays = 0, by = 0, bys = 1
+		real*8, dimension(:), allocatable	:: bl(:), solveYPent(:)
 		
 		n = size(s)
 		h = s(2) - s(1)

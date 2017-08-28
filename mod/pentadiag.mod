@@ -1,5 +1,5 @@
 GFORTRAN module version '10' created from .\src\pentadiag.f95
-MD5:d373b0335a0795a5caa1b4614b687291 -- If you edit this, you'll get what you deserve.
+MD5:77c47545f605f532ac023868ee36b419 -- If you edit this, you'll get what you deserve.
 
 (() () () () () () () () () () () () () () () () () () () () () () () ()
 () () ())
@@ -22,15 +22,13 @@ DECL UNKNOWN 0 0 SUBROUTINE IMPLICIT_PURE ALWAYS_EXPLICIT) (UNKNOWN 0 0
 0 0 UNKNOWN ()) 4 0 (5 6 7 8 9) () 0 () () () 0 0)
 10 'solvexpent' 'pentadiag' '' 1 ((PROCEDURE UNKNOWN-INTENT MODULE-PROC
 DECL UNKNOWN 0 0 ALLOCATABLE DIMENSION FUNCTION ALWAYS_EXPLICIT) (REAL 8
-0 0 0 REAL ()) 11 0 (12 13 14 15 16) (1 0 DEFERRED () ()) 10 () () () 0
-0)
-17 'solveypent' 'pentadiag' '' 1 ((PROCEDURE UNKNOWN-INTENT MODULE-PROC
+0 0 0 REAL ()) 11 0 (12 13 14 15) (1 0 DEFERRED () ()) 10 () () () 0 0)
+16 'solveypent' 'pentadiag' '' 1 ((PROCEDURE UNKNOWN-INTENT MODULE-PROC
 DECL UNKNOWN 0 0 ALLOCATABLE DIMENSION FUNCTION ALWAYS_EXPLICIT) (REAL 8
-0 0 0 REAL ()) 18 0 (19 20 21 22 23) (1 0 DEFERRED () ()) 17 () () () 0
-0)
-24 'solvezpent' 'pentadiag' '' 1 ((PROCEDURE UNKNOWN-INTENT MODULE-PROC
+0 0 0 REAL ()) 17 0 (18 19 20 21) (1 0 DEFERRED () ()) 16 () () () 0 0)
+22 'solvezpent' 'pentadiag' '' 1 ((PROCEDURE UNKNOWN-INTENT MODULE-PROC
 DECL UNKNOWN 0 0 ALLOCATABLE DIMENSION FUNCTION ALWAYS_EXPLICIT) (REAL 8
-0 0 0 REAL ()) 25 0 (26 27) (1 0 DEFERRED () ()) 24 () () () 0 0)
+0 0 0 REAL ()) 23 0 (24 25) (1 0 DEFERRED () ()) 22 () () () 0 0)
 5 'u' '' '' 4 ((VARIABLE OUT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DIMENSION
 DUMMY) (REAL 8 0 0 0 REAL ()) 0 0 () (1 0 ASSUMED_SHAPE (CONSTANT (
 INTEGER 4 0 0 0 INTEGER ()) 0 '1') ()) 0 () () () 0 0)
@@ -54,26 +52,22 @@ INTEGER 4 0 0 0 INTEGER ()) 0 '1') ()) 0 () () () 0 0)
 (REAL 8 0 0 0 REAL ()) 0 0 () () 0 () () () 0 0)
 15 'omega' '' '' 11 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DUMMY)
 (REAL 8 0 0 0 REAL ()) 0 0 () () 0 () () () 0 0)
-16 'bx' '' '' 11 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DUMMY) (
-REAL 8 0 0 0 REAL ()) 0 0 () () 0 () () () 0 0)
-19 's' '' '' 18 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DIMENSION
+18 's' '' '' 17 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DIMENSION
 DUMMY) (REAL 8 0 0 0 REAL ()) 0 0 () (1 0 ASSUMED_SHAPE (CONSTANT (
 INTEGER 4 0 0 0 INTEGER ()) 0 '1') ()) 0 () () () 0 0)
-20 'x' '' '' 18 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DIMENSION
+19 'x' '' '' 17 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DIMENSION
 DUMMY) (REAL 8 0 0 0 REAL ()) 0 0 () (1 0 ASSUMED_SHAPE (CONSTANT (
 INTEGER 4 0 0 0 INTEGER ()) 0 '1') ()) 0 () () () 0 0)
-21 'beta' '' '' 18 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DUMMY)
+20 'beta' '' '' 17 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DUMMY)
 (REAL 8 0 0 0 REAL ()) 0 0 () () 0 () () () 0 0)
-22 'omega' '' '' 18 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DUMMY)
+21 'omega' '' '' 17 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DUMMY)
 (REAL 8 0 0 0 REAL ()) 0 0 () () 0 () () () 0 0)
-23 'rf' '' '' 18 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DUMMY) (
-REAL 8 0 0 0 REAL ()) 0 0 () () 0 () () () 0 0)
-26 's' '' '' 25 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DIMENSION
+24 's' '' '' 23 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DIMENSION
 DUMMY) (REAL 8 0 0 0 REAL ()) 0 0 () (1 0 ASSUMED_SHAPE (CONSTANT (
 INTEGER 4 0 0 0 INTEGER ()) 0 '1') ()) 0 () () () 0 0)
-27 'beta' '' '' 25 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DUMMY)
+25 'beta' '' '' 23 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DUMMY)
 (REAL 8 0 0 0 REAL ()) 0 0 () () 0 () () () 0 0)
 )
 
-('pentadiag' 0 2 'solvepent' 0 3 'solvexpent' 0 10 'solveypent' 0 17
-'solvezpent' 0 24)
+('pentadiag' 0 2 'solvepent' 0 3 'solvexpent' 0 10 'solveypent' 0 16
+'solvezpent' 0 22)

@@ -2,10 +2,10 @@ module xyEquations
 contains
 	subroutine SORIterX(x, y, s, beta, omega, w)
 		implicit none
-		integer										:: n, i
-		real(SELECTED_REAL_KIND(15))				:: h, am2, am1, a0, ap1, ap2, bm1, bp1
-		real(SELECTED_REAL_KIND(15)), intent(in)	:: beta, w, omega, s(:)
-		real(SELECTED_REAL_KIND(15)), intent(inout)	:: x(:), y(:)
+		integer					:: n, i
+		real*8					:: h, am2, am1, a0, ap1, ap2, bm1, bp1
+		real*8, intent(in)		:: beta, w, omega, s(:)
+		real*8, intent(inout)	:: x(:), y(:)
 		
 		! Initialize number of nodes and step size
 		n = size(s)
@@ -31,10 +31,10 @@ contains
 	
 	subroutine SORIterY(x, y, s, beta, omega, w)
 		implicit none
-		integer										:: n, i
-		real(SELECTED_REAL_KIND(15))				:: h, am2, am1, a0, ap1, ap2, bm1, bp1
-		real(SELECTED_REAL_KIND(15)), intent(in)	:: beta, w, omega, s(:)
-		real(SELECTED_REAL_KIND(15)), intent(inout)	:: x(:), y(:)
+		integer					:: n, i
+		real*8					:: h, am2, am1, a0, ap1, ap2, bm1, bp1
+		real*8, intent(in)		:: beta, w, omega, s(:)
+		real*8, intent(inout)	:: x(:), y(:)
 		
 		! Initialize number of nodes and step size
 		n = size(s)
@@ -60,10 +60,10 @@ contains
 	
 	subroutine solveXY(x, y, s, beta, omega)
 		implicit none
-		integer										:: n, i
-		real(SELECTED_REAL_KIND(15))				:: beta, w, omega, rf
-		real(SELECTED_REAL_KIND(15)), intent(in)	:: s(:)
-		real(SELECTED_REAL_KIND(15)), intent(out)	:: x(:), y(:)
+		integer				:: n, i
+		real*8				:: beta, w, omega, rf
+		real*8, intent(in)	:: s(:)
+		real*8, intent(out)	:: x(:), y(:)
 		
 		! Initialize SOR factor, final radius, and number of nodes
 		w = 1.5
